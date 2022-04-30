@@ -1,0 +1,4 @@
+﻿  ConsoleApplication2.cpp
+C:\Users\Аня\source\repos\Лабораторные 3 курс\ConsoleApplication2\ConsoleApplication2\ConsoleApplication2.cpp(158,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\Аня\source\repos\Лабораторные 3 курс\ConsoleApplication2\ConsoleApplication2\ConsoleApplication2.cpp(144,30): warning C4101: A: неиспользованная локальная переменная
+  ConsoleApplication2.vcxproj -> C:\Users\Аня\source\repos\Лабораторные 3 курс\ConsoleApplication2\x64\Debug\ConsoleApplication2.exe
