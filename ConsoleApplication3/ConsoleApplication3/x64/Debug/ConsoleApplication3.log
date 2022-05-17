@@ -1,3 +1,4 @@
 ﻿  ConsoleApplication3.cpp
-C:\Users\Аня\source\repos\Лабораторные 3 курс\ConsoleApplication3\ConsoleApplication3\ConsoleApplication3.cpp(86,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  ConsoleApplication3.vcxproj -> C:\Users\Аня\source\repos\Лабораторные 3 курс\ConsoleApplication3\x64\Debug\ConsoleApplication3.exe
+D:\repository\ConsoleApplication3\ConsoleApplication3\ConsoleApplication3.cpp(86,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  LINK : не найден или не выполнена сборка D:\repository\ConsoleApplication3\x64\Debug\ConsoleApplication3.exe при последней инкрементной компоновке; выполняется полная компоновка
+  ConsoleApplication3.vcxproj -> D:\repository\ConsoleApplication3\x64\Debug\ConsoleApplication3.exe
