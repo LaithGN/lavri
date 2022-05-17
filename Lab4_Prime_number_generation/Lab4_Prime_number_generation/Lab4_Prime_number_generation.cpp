@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <bitset>
 
 
 using namespace std;
@@ -13,22 +14,19 @@ std::string toString(T val)
     return oss.str();
 }
 
+int Test_Miller_Rabin(int p) {
+
+}
+
 int main()
 {
-    int k, N, p;
+    int k, N;
     cout << "Enter k = "; //разрядость искомого числа
     cin >> k;
     cout << "Enter N = "; //количество проверок на простоту
     cin >> N;
-
-    //создаем вектор, для генерации числа p, вектор - двоичное представление числа p
+    int p = 0;
     vector<int> b(k);
-    for (int i = 0; i < k; i++) {
-        b[i] = rand() % 1 + 0;
-    }
-    b[0] = 1;
-    b[k - 1] = 1;
-
     vector<int> prime_number = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103,
                                 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223,
                                 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347,
@@ -45,14 +43,35 @@ int main()
                                 1693, 1697, 1699, 1709, 1721, 1723, 1733, 1741, 1747, 1753, 1759, 1777, 1783, 1787, 1789, 1801, 1811, 1823,
                                 1831, 1847, 1861, 1867, 1871, 1873, 1877, 1879, 1889, 1901, 1907, 1913, 1931, 1933, 1949, 1951, 1973, 1979,
                                 1987, 1993, 1997, 1999 };
+    while (true) {
+        //создаем вектор, для генерации числа p, вектор - двоичное представление числа p
+        for (int i = 0; i < k; i++) {
+            b[i] = rand() % 1 + 0;
+        }
+        b[0] = 1;
+        b[k - 1] = 1;
 
-    string b_string="";
-    for (int i = 0; i < k; i++) {
-        b_string += toString(b[i]);
+        string b_string = "";
+        for (int i = 0; i < k; i++) {
+            b_string += toString(b[i]);
+        }
+        cout << endl << b_string << endl;
+
+        for (int i = k - 1; i > -1; i--)//    пошли по строке бит
+            if (b_string[i] == '1')   // если i-й бит в строке = 1 ,
+                p += pow(2, i);
+        cout << p;
+
+        bool flag = false;
+        for (int i = 0; i < prime_number.size(); i++) {
+            if (p % prime_number[i] == 0) {
+                flag = true;
+                break;
+            }
+        }
+        if (!flag && Test_Miller_Rabin(p)) break;
     }
-    cout << endl << b_string;
-
-
+    cout << p;
 
 
 
